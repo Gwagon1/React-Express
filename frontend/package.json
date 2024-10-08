@@ -42,5 +42,6 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.0"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
