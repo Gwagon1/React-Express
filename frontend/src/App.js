@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SearchBar from './components/SearchBar';
-import UserDetails from './components/UserDetails';
-import RepoDetails from './components/RepoDetails';
+import SearchBar from './components/SearchBar.js';
+import UserDetails from './components/UserDetails.js';
+import RepoDetails from './components/RepoDetails.js';
 
 function App() {
   return (

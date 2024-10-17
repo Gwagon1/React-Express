@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Loading from './Loading'; // Import the Loading component
+import Loading from './Loading.js';
 
 const RepoDetails = () => {
   const { username, repo } = useParams(); // Get username and repo from route parameters

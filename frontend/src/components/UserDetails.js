@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Loading from './Loading'; // Import the Loading component
+import Loading from './Loading.js'; 
 
 const UserDetails = () => {
   const { username } = useParams(); // Get username from route parameters
