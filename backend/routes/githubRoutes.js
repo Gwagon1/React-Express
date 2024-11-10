@@ -1,6 +1,7 @@
 const express = require('express');
 const { getUser, getUserRepos, getRepoCommits } = require('../controllers/githubController');
 const router = express.Router();
+const fetch = require('node-fetch');
 
 // Routes to interact with GitHub API
 router.get('/:username', getUser);
@@ -15,11 +16,11 @@ router.get('/:username/repos/:repo', async (req, res) => {
       return res.status(404).json({ message: 'Repository not found' });
     }
     const repoData = await response.json();
-    res.json(repoData);
+    const { created_at, pushed_at } = repoData;
+    res.json({ ...repoData, created_at, pushed_at });
   } catch (error) {
     res.status(500).json({ message: 'Error fetching repo data', error });
   }
 });
-router.get('/:username/repos/:repo/commits', getRepoCommits);
 
-module.exports = router;
+export default router;

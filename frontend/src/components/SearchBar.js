@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const SearchBar = () => {
-  const [username, setUsername] = useState(''); // State to hold the username input
-  const navigate = useNavigate(); // Hook to navigate to different routes
+const SearchBar = ({ onSearch }) => {
+  const [username, setUsername] = useState('');
+  const [error, setError] = useState(null); // Error state for invalid input or search errors
 
-  // Function to handle search button click
-  const handleSearch = () => {
-    navigate(`/user/${username}`); // Navigate to the user details page
+  // Handle search submission
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    if (!username.trim()) {
+      setError('Please enter a valid username'); // Set error message if username is empty
+      return;
+    }
+
+    setError(null); // Reset error if validation passes
+    onSearch(username);
   };
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search GitHub user..."
-        value={username}
-        onChange={(e) => setUsername(e.target.value)} // Update state on input change
-      />
-      <button onClick={handleSearch}>Search</button> {/* Trigger search */}
+      <form onSubmit={handleSearch}>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Enter GitHub username"
+        />
+        <button type="submit">Search</button>
+      </form>
+      {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error message */}
     </div>
   );
 };
