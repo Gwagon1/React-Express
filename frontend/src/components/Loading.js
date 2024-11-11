@@ -1,5 +1,5 @@
 import React from 'react';
-import './Loading.scss'; // Import your custom styles for the spinner
+import './Loading.scss'; 
 
 const Loading = () => {
   return (

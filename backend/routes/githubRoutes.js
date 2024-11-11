@@ -23,4 +23,5 @@ router.get('/:username/repos/:repo', async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;
+

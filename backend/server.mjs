@@ -3,8 +3,8 @@
 import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
-import githubRoutes from './routes/githubRoutes.js';
 import path from 'path';
+const githubRoutes = require('./routes/githubRoutes');
 
 const app = express();
 

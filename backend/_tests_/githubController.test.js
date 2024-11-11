@@ -1,6 +1,7 @@
 const request = require('supertest');
 const express = require('express');
-const githubRoutes = require('../routes/githubRoutes');
+const githubRoutes = require('./routes/githubRoutes');
+
 
 const app = express();
 app.use('/api/users', githubRoutes);
