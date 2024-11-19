@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "test": "jest --config=./jest.config.js",
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+     "type": "module"
   },
   "keywords": [],
   "author": "Gryphon",
@@ -15,8 +16,7 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
-    "node-fetch": "^3.3.2",
-    "type": "module"
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "jest": "^29.7.0",
